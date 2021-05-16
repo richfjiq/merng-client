@@ -28,7 +28,10 @@ const authLink = setContext(() => {
   };
 });
 
-const link = from([errorLink, new HttpLink({ uri: "http://localhost:5000" })]);
+const link = from([
+  errorLink,
+  new HttpLink({ uri: "https://radiant-plains-25872.herokuapp.com/" }),
+]);
 
 const client = new ApolloClient({
   link: authLink.concat(link),
